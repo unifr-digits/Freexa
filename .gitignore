@@ -2,5 +2,5 @@ node_modules/
 
 *.tsbuildinfo
 
-.npm
-.tmp
+*.npm
+*.tmp
