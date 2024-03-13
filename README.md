@@ -3,10 +3,10 @@
 ## Purpose of the software
 
 The Freexa software is an enterprise LLM that supports employee efficiency by offering tools/features such as :
-- Chat
-- Summarize documents
-- Retrieval of employees information
-- Planning tasks
+- Chat : the employees can ask questions regarding the company
+- Summarize documents : the employees can summarize documents such as pdf files or text
+- Retrieval of employees information : members of the direction can retrieve data of employees
+- Planning tasks : employees can plan tasks for their day, week and month
 
 ## User Guide
 
@@ -39,15 +39,10 @@ To build the software, follow these steps:
 
 ## Structure of the repository
 
-doc :  Directory containing the documentation of the project. For example,
-this directory can contain image, model or text files documenting the
-implementation and the use of the software. These files can be, e.g.,
-from the specification or newly created files. Create initial example
-files in the directory.
+doc :  Directory containing the documentation of the project, requirements documents and images. 
 
 src : Directory containing the source code of the application with all files
-necessary for development and for building the application. Create
-initial example files in the directory.
+necessary for development and for building the application. 
 
 README.md : File explaining the purpose of the software, how to build and use it
 and the structure of the repository. More detailed information is
