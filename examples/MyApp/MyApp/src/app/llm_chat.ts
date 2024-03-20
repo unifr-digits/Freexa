@@ -9,7 +9,7 @@ const prompt = promptSync();
 const llm_prompt: string = prompt('Enter LLM Prompt:');
 
 const replicate = new Replicate({
-  auth: 'r8_fC2A5cpPqmpPPpUwIdcxWaFnyX540tt1XXooY',
+  auth: '',
   userAgent: 'https://www.npmjs.com/package/create-replicate'
 });
 type ModelType = `${string}/${string}` | `${string}/${string}:${string}`;

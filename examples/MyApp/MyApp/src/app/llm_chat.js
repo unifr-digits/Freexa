@@ -7,7 +7,7 @@ dotenv_1.default.config();
 var prompt = (0, prompt_sync_1.default)();
 var llm_prompt = prompt('Enter LLM Prompt:');
 var replicate = new replicate_1.default({
-    auth: 'r8_fC2A5cpPqmpPPpUwIdcxWaFnyX540tt1XXooY',
+    auth: '',
     userAgent: 'https://www.npmjs.com/package/create-replicate'
 });
 var model = 'mistralai/mixtral-8x7b-instruct-v0.1:5d78bcd7a992c4b793465bcdcf551dc2ab9668d12bb7aa714557a21c1e77041c';
