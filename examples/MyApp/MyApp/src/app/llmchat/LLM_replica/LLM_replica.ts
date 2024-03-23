@@ -1,15 +1,12 @@
-
-import { Component } from '@angular/core';
 import Replicate from 'replicate';
-import dotenv from 'dotenv';
-// Initialize environment variables
-dotenv.config();
+//import dotenv from 'dotenv';
 
-// Define the class
-export class LLMRunner {
-  
+// dotenv.config()
+
+export class LLMReplicate {
   replicate: Replicate;
   model: any;
+  prompt: string = "Who are you"
 
   constructor() {
     this.replicate = new Replicate({
@@ -19,17 +16,18 @@ export class LLMRunner {
     this.model = 'mistralai/mixtral-8x7b-instruct-v0.1:5d78bcd7a992c4b793465bcdcf551dc2ab9668d12bb7aa714557a21c1e77041c';
   }
 
-  async runModel(promptText: string) {
+  async runModel(userprompt: string) {
     const input = {
       top_k: 50,
       top_p: 0.9,
-      prompt: promptText,
+      prompt: userprompt,
       temperature: 0.6,
       max_new_tokens: 1024,
       prompt_template: '<s>[INST] {prompt} [/INST] ',
       presence_penalty: 0,
       frequency_penalty: 0,
     };
+
 
     const output = await this.replicate.run(this.model, { input });
 
@@ -45,15 +43,3 @@ export class LLMRunner {
     return formattedOutput;
   }
 }
-
-// Example usage
-const prompt = "Who are you?"
-const llmRunner = new LLMRunner();
-
-llmRunner.runModel(prompt)
-  .then((result) => {
-    console.log(result);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });

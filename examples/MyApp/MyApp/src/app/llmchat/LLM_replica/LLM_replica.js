@@ -36,20 +36,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.LLMReplicate = void 0;
 var replicate_1 = require("replicate");
-var dotenv_1 = require("dotenv");
-// Initialize environment variables
-// dotenv.config();
-// Define the class
-var LLMRunner = /** @class */ (function () {
-    function LLMRunner() {
+//import dotenv from 'dotenv';
+// dotenv.config()
+var LLMReplicate = /** @class */ (function () {
+    function LLMReplicate() {
+        this.prompt = "Who are you";
         this.replicate = new replicate_1.default({
             auth: "Token ".concat(process.env['REPLICATE_API_TOKEN']),
             userAgent: 'https://www.npmjs.com/package/create-replicate'
         });
         this.model = 'mistralai/mixtral-8x7b-instruct-v0.1:5d78bcd7a992c4b793465bcdcf551dc2ab9668d12bb7aa714557a21c1e77041c';
     }
-    LLMRunner.prototype.runModel = function (promptText) {
+    LLMReplicate.prototype.runModel = function (userprompt) {
         return __awaiter(this, void 0, void 0, function () {
             var input, output, formattedOutput, _i, output_1, e;
             return __generator(this, function (_a) {
@@ -58,7 +58,7 @@ var LLMRunner = /** @class */ (function () {
                         input = {
                             top_k: 50,
                             top_p: 0.9,
-                            prompt: promptText,
+                            prompt: userprompt,
                             temperature: 0.6,
                             max_new_tokens: 1024,
                             prompt_template: '<s>[INST] {prompt} [/INST] ',
@@ -84,16 +84,6 @@ var LLMRunner = /** @class */ (function () {
             });
         });
     };
-    return LLMRunner;
+    return LLMReplicate;
 }());
-dotenv_1.default.config();
-// Example usage
-var prompt = "Who are you?";
-var llmRunner = new LLMRunner();
-llmRunner.runModel(prompt)
-    .then(function (result) {
-    console.log(result);
-})
-    .catch(function (error) {
-    console.error('Error:', error);
-});
+exports.LLMReplicate = LLMReplicate;
