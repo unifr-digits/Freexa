@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LLMReplicate } from './LLM_replica/LLM_replica';
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
 import promptSync from 'prompt-sync';
 
 @Component({

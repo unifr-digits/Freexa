@@ -41,7 +41,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LLMChatComponent = void 0;
 var core_1 = require("@angular/core");
 var LLM_replica_1 = require("./LLM_replica/LLM_replica");
-var dotenv_1 = require("dotenv");
+var dotenv = require("dotenv");
 var prompt_sync_1 = require("prompt-sync");
 var LLMChatComponent = function () {
     var _classDecorators = [(0, core_1.Component)({
@@ -72,7 +72,7 @@ var LLMChatComponent = function () {
 }();
 exports.LLMChatComponent = LLMChatComponent;
 var prompt = (0, prompt_sync_1.default)();
-dotenv_1.default.config();
+dotenv.config();
 var llm_prompt = prompt('Enter LLM Prompt:');
 var llmreplicate = new LLM_replica_1.LLMReplicate();
 var response = llmreplicate.runModel(llm_prompt);
